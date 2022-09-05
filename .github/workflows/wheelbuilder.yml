@@ -33,6 +33,7 @@ jobs:
           CIBW_BEFORE_TEST_LINUX: mkdir -p ~/examples/samples && cp -R {project}/examples/samples/* ~/examples/samples/
           CIBW_TEST_REQUIRES: pytest
           CIBW_TEST_COMMAND_LINUX: "pytest {project}/tests"
+          CIBW_BUILD: "cp37-manylinux_i686 cp39-manylinux_i686"
 
 
       - uses: actions/upload-artifact@v2
