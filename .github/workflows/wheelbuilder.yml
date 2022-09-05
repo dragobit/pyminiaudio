@@ -9,14 +9,14 @@ on:
 
 jobs:
   build_wheels:
-    name: Build wheels on ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
+    name: Build wheels on ubuntu-latest
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         # Need to be PIP517 build in order to avoid setuptools bug - https://github.com/pypa/cibuildwheel/issues/813
         # I dunno enough about the work involved in that - sorry!
         # os: [ubuntu-latest, windows-latest, macos-11, macos-latest]
-          os: [ubuntu-latest, windows-latest]
+        # os: [ubuntu-latest, windows-latest]
 
     steps:
       - uses: actions/checkout@v2
